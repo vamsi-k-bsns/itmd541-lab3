@@ -1,0 +1,23 @@
+@media all{
+
+
+
+}
+
+
+
+@media all and (max-device-width: 480px){
+
+
+}
+
+
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
