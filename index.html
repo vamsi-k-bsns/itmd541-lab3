@@ -5,15 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
+<h4>ITMD 441/541 - Lab 3 - Vamsi Krishna</h4>
+<h1>Tip Calculator</h1>
+<script src="scripts.js"></script>
 <body>
     
-    <h4 id="name">ITMD 4/541 - Lab 3 - Vamsi Krishna</h4>
-    <h1 id="title">Tip Calculator</h1>
-    Bill: <input type="text" id="bill" min="0" oninput="formatInput(event)" pattern="\d+(\.\d{0,2})?"><br>
-    Tip Percentage: <input type="range" min="0" max="100" value="10" step="0.01" id="tipSlider" oninput="updateValues(event)">
-    <input type="number" id="tipPercent" disabled><br>
-    Tip Amount: <input type="number" id="tipValue" disabled><br>
-    Total Bill: <input type="number" id="billTotal" disabled>
-    <script src="scripts.js"></script>
+    Bill: 
+    <input id="billInput" type="number" min="0" step="0.01" value="0.00" onkeydown="return event.keyCode !== 69" oninput="calcTotal()" />
+    <br>
+    Tip:
+    <input id="tipSlider" type="range" min="0" max="100" step="1" value="15" oninput="calcTotal()"/>
+    <br>
+    Tip Value:
+    <input disabled id="tipValue" type="number"/>
+    <br>
+    Total Bill:
+    <input disabled id="billTotal" type="number"/>
+
+    
 </body>
 </html>
