@@ -28,7 +28,8 @@ body{
   font-weight: bolder;
   margin-right: 5vw;
   margin-left: 2.5vw;
-  
+  border: solid;
+  padding: 10vh;
 
 }
 
@@ -146,12 +147,13 @@ button:focus{
 
   body{
 
-    width: 30vw;
+    width: 25vw;
     margin: 0 auto;
     text-align: center;
     border:  solid;
     padding: 10vh;
     font-size: x-large;
+    padding: 4vh 10vh;
 
   }
 
