@@ -13,6 +13,9 @@ input[type=number] {
 .labels{
 
   font-size: x-large;
+  align-items: center;
+  text-align: center;
+
 
 }
 
@@ -62,9 +65,9 @@ input[type=number]{
 .dollar{
 
   position: relative;
-  bottom: 4.4vh;
-  right: 40vw;
-  font-size: x-large
+  top: 4.5vh;
+  right: 18vw;
+  font-size: x-large;
 
 }
 

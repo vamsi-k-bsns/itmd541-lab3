@@ -10,18 +10,21 @@
 <script src="scripts.js"></script>
 <body>
     
-    <span class="labels">Bill:</span><br>
+    <span class="labels">&nbsp;Bill:</span><br>
     <input id="billInput" type="number" placeholder="$$$" min="0" onkeydown="return event.keyCode !== 69" oninput="calcTotal()" />
     <br><br>
-    <span class="labels">Tip:</span><span id="percentMeter"></span>
+    <span class="labels">&nbsp;Tip:</span><span id="percentMeter"></span>
     <input id="tipSlider" type="range" min="0" max="100" step="1" value="15" oninput="calcTotal()"/>
     <div><button id="ten" onfocus="buttonPress(10)">10%</button><button id="fifteen" onfocus="buttonPress(15)">15%</button><button id="twenty" onfocus="buttonPress(20)" >20%</button></div>
     <br>
-    <span class="labels">Tip Value:</span> 
-    <input disabled id="tipValue" type="number"><span class="dollar">$</span>
+    <span class="dollar">$</span>
+    <span class="labels">Tip Value:</span>
     <br>
+    <input disabled id="tipValue" type="number">
+    <br>
+    <span class="dollar">$</span>
     <span class="labels">Total Bill</span> 
-    <input disabled id="billTotal" type="number"/><span class="dollar">$</span>
+    <input disabled id="billTotal" type="number"/>
        
 </body>
 </html>
