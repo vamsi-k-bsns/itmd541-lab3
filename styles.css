@@ -146,11 +146,12 @@ button:focus{
 
   body{
 
-    width: 60vw;
+    width: 30vw;
     margin: 0 auto;
     text-align: center;
     border:  solid;
     padding: 10vh;
+    font-size: x-large;
 
   }
 
