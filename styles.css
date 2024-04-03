@@ -1,4 +1,5 @@
 
+
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
@@ -38,7 +39,7 @@ body{
 
 input[type=number]{
 
-  font-family: 'Courier New', Courier, monospace;
+  font-family: monospace;
   height: 100%;
   font-size: 28px;
   width: 100%;
@@ -61,7 +62,7 @@ input[type=number]{
 .dollar{
 
   position: relative;
-  bottom: 4vh;
+  bottom: 4.4vh;
   right: 40vw;
   font-size: x-large
 
