@@ -1,16 +1,3 @@
-@media all{
-
-
-
-}
-
-
-
-@media all and (max-device-width: 480px){
-
-
-}
-
 
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -22,4 +9,141 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.labels{
 
+  font-size: x-large;
+
+}
+
+body{
+
+  touch-action: none;
+  background-color: black;
+  color: rgb(5, 197, 5);
+  text-align:center;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: bolder;
+  margin-right: 5vw;
+  margin-left: 2.5vw;
+  
+
+}
+
+#percentMeter{
+
+  font-size: x-large;
+  color: white;
+
+}
+
+input[type=number]{
+
+  font-family: 'Courier New', Courier, monospace;
+  height: 100%;
+  font-size: 28px;
+  width: 100%;
+  border-radius: 50vw;
+  font-weight: bolder;
+  justify-content: center;
+  text-align: center;
+  border: solid rgb(1, 122, 1);
+
+}
+
+
+
+:disabled{
+
+  color: white;
+
+}
+
+.dollar{
+
+  position: relative;
+  bottom: 4vh;
+  right: 40vw;
+  font-size: x-large
+
+}
+
+input[type="range"] {
+	font-size: 1.5rem;
+	width: 12.5em;
+}
+
+input[type="range"] {
+	color: rgb(5, 197, 5);
+	--thumb-height: 5vh;
+	--track-height: 1vh;
+	--track-color: rgba(0, 0, 0, 0.2);
+	--brightness-hover: 180%;
+	--brightness-down: 80%;
+	--clip-edges: 0.125em;
+}
+
+input[type="range"] {
+	position: relative;
+	background: #fff0;
+	overflow: hidden;
+}
+
+input[type="range"],
+input[type="range"]::-webkit-slider-runnable-track,
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	transition: all ease 100ms;
+	height: var(--thumb-height);
+  cursor: pointer;
+  width: 100%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	--thumb-radius: calc((var(--thumb-height) * 0.5) - 1px);
+	--clip-top: calc((var(--thumb-height) - var(--track-height)) * 0.5 - 0.5px);
+	--clip-bottom: calc(var(--thumb-height) - var(--clip-top));
+	--clip-further: calc(100% + 1px);
+	--box-fill: calc(-100vmax - var(--thumb-width, var(--thumb-height))) 0 0
+		100vmax currentColor;
+
+	width: var(--thumb-width, var(--thumb-height));
+	background: linear-gradient(currentColor 0 0) scroll no-repeat left center /
+		50% calc(var(--track-height) + 1px);
+	background-color: currentColor;
+	box-shadow: var(--box-fill);
+	border-radius: var(--thumb-width, var(--thumb-height));
+
+	filter: brightness(100%);
+	clip-path: polygon(
+		100% -1px,
+		var(--clip-edges) -1px,
+		0 var(--clip-top),
+		-100vmax var(--clip-top),
+		-100vmax var(--clip-bottom),
+		0 var(--clip-bottom),
+		var(--clip-edges) 100%,
+		var(--clip-further) var(--clip-further)
+	);
+}
+
+button{
+
+  height: 10vh;
+  margin: 1%;
+  width: 30%;
+  border-radius: 10vw;
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  background-color: black;
+  color: rgb(5, 197, 5);
+  border: solid;
+
+}
+
+button:focus{
+
+  background-color: rgb(5, 197, 5);
+  color: black;
+
+}
