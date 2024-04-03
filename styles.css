@@ -1,5 +1,4 @@
 
-
 input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
@@ -25,7 +24,7 @@ body{
   background-color: black;
   color: rgb(5, 197, 5);
   text-align:center;
-  font-family:'Courier New', Courier, monospace;
+  font-family:monospace;
   font-weight: bolder;
   margin-right: 5vw;
   margin-left: 2.5vw;
@@ -59,15 +58,6 @@ input[type=number]{
 :disabled{
 
   color: white;
-
-}
-
-.dollar{
-
-  position: relative;
-  top: 4.5vh;
-  right: 18vw;
-  font-size: x-large;
 
 }
 
@@ -149,5 +139,19 @@ button:focus{
 
   background-color: rgb(5, 197, 5);
   color: black;
+
+}
+
+@media (min-width: 700px) {
+
+  body{
+
+    width: 60vw;
+    margin: 0 auto;
+    text-align: center;
+    border:  solid;
+    padding: 10vh;
+
+  }
 
 }
