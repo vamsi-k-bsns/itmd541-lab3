@@ -40,9 +40,9 @@ function checkInput(){
 function detectKeys(key){
 
     // valid keys are:
-    // Backspace, Enter, Spacebar, Arrow Keys, Delete, numbers, and period/decimal point
+    // Backspace, Enter, Spacebar, Arrow Keys, Delete, numbers, and period/decimal point, Tab
 
-    if(key == 'Backspace' || key == 'Enter' || key == 'Spacebar' || key == 'ArrowUp' || key == 'ArrowDown' || key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || (key >= 0 && key <= 9) || key == '.' || key == '.'){
+    if(key == 'Backspace' || key == 'Enter' || key == 'Spacebar' || key == 'ArrowUp' || key == 'ArrowDown' || key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || (key >= 0 && key <= 9) || key == '.' || key == '.' || key == 'Tab'){
 
         console.log("valid");
         console.log(key);
