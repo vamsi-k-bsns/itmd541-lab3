@@ -40,17 +40,12 @@ function checkInput(){
 function detectKeys(key){
 
     // valid keys are:
-    // Backspace, Enter, Spacebar - 8, 13, 32
-    // Arrow Keys - [37-40]
-    // Delete - 46
-    // numbers on top row - [48-57]
-    // numbers on numpad - [96-105]
-    // decimal point and period - 110 and 190
-    //android keys?
+    // Backspace, Enter, Spacebar, Arrow Keys, Delete, numbers, and period/decimal point
 
-    if((key >= 8 && key <= 16) || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190){
+    if(key == 'Backspace' || key == 'Enter' || key == 'Spacebar' || key == 'ArrowUp' || key == 'ArrowDown' || key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || (key >= 0 && key <= 9) || key == '.' || key == '.'){
 
         console.log("valid");
+        console.log(key);
 
         if(state == 1){
             //remove error message
@@ -61,7 +56,8 @@ function detectKeys(key){
     else{
 
         console.log("invalid");
-        
+        console.log(key);
+
         if(state == 0){
             //show error message
             errorEnable();
