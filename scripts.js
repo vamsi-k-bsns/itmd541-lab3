@@ -1,24 +1,41 @@
 
-//function to calculate total bill [runs when either bill input or tip slider are changed]
+//function to check input and throw a message if input is invalid
+function checkInput(){
 
-function calcTotal() {
+    let billInput = document.getElementById('billInput').value;
 
-    var billInput = document.getElementById('billInput').value;
+    //match with a regular expression that looks for numbers with upto two decimals
+    if(billInput.match(/[0-9]{1,}[.]{0,1}[0-9]{0,2}/)){
 
-    //function to limit user to two inputs after a decimal
-    if (billInput.indexOf('.') !== -1){
-        billInput = parseFloat(parseInt(parseFloat(billInput)*100))/100;
-        document.getElementById('billInput').value = billInput;
+        //put the matched value in the input field
+        document.getElementById('billInput').value = billInput.match(/[0-9]{1,}[.]{0,1}[0-9]{0,2}/).join('');
+        //call function to calculate bill
+        calcTotal();
+        
+    }
+    else{
+
+        //reset the input field
+        document.getElementById('billInput').value = "";
+
     }
 
-    var tipPercent = parseFloat(document.getElementById('tipSlider').value);
+}
 
-    //updating tip percent field
-    document.getElementById('percentMeter').textContent = tipPercent + "%";
 
-    //updating tip value and total bill fields
-    document.getElementById('tipValue').value = parseFloat((tipPercent*billInput)/100).toFixed(2);
-    document.getElementById('billTotal').value = parseFloat(parseFloat(billInput) + ((tipPercent*parseFloat(billInput))/100)).toFixed(2);
+//function to check what key the user input
+function detectKeys(key){
+
+    // valid keys are:
+    // Backspace, Enter, Delete - 8, 13, 46
+    // numbers on top row - [48-57]
+    // numbers on numpad - [96-105]
+    // decimal point and period - 110 and 190
+
+    if(key == 8 || key == 13 || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190)
+        console.log("valid");
+    else
+        console.log("invalid: " + key);
 
 }
 
@@ -27,7 +44,7 @@ function buttonPress(buttonNum){
 
     document.getElementById('tipSlider').value = buttonNum;
     calcTotal();
-
+    
 }
 
 //function to update fields when tip slider is moved
@@ -50,5 +67,21 @@ function tipSlide(){
         calcTotal();
     }
     else calcTotal();
+
+}
+
+//function to calculate total bill
+function calcTotal() {
+
+    var billInput = document.getElementById('billInput').value;
+
+    var tipPercent = parseFloat(document.getElementById('tipSlider').value);
+
+    //updating tip percent field
+    document.getElementById('percentMeter').textContent = tipPercent + "%";
+
+    //updating tip value and total bill fields
+    document.getElementById('tipValue').value = parseFloat((tipPercent*billInput)/100).toFixed(2);
+    document.getElementById('billTotal').value = parseFloat(parseFloat(billInput) + ((tipPercent*parseFloat(billInput))/100)).toFixed(2);
 
 }

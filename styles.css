@@ -15,7 +15,6 @@ input[type=number] {
   align-items: center;
   text-align: center;
 
-
 }
 
 body{
@@ -39,7 +38,7 @@ body{
 
 }
 
-input[type=number]{
+input[type=number],[type=text]{
 
   font-family: 'Courier New', Courier, monospace;
   height: 100%;
@@ -53,7 +52,7 @@ input[type=number]{
 
 }
 
-input[type=number]:focus{
+input[type=number],[type=text]:focus{
 
   outline: none;
   border: solid 5px rgb(5, 197, 5);
