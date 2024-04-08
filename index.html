@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <h4 class="title" id="title1">ITMD 441/541 - Lab 3 - Vamsi Krishna</h4>
-<h1 class="title" id="title2">Tip Calculator</h1>
+<h1 class="title" id="title2"></h1>
 <script src="scripts.js"></script>
-<body>
-    <h1 id="errorMessage">enter numerical values only</h1>
+<body onload="starter()">
+    <h1 id="errorMessage"></h1>
     <span class="labels">Bill:</span><br>
     <input id="billInput" type="text" placeholder="$0.00" min="0" oninput="checkInput()" onkeydown="detectKeys(event.keyCode)" />
     <br><br>

@@ -1,4 +1,17 @@
 
+//variable to describe current state
+// 0 - default, 1 - error state
+var state = 0; 
+
+//variables for typewriter functions
+var i=0,j=0;
+errorText = "only enter numerical values."
+defaultText = "Tip Calculator"
+
+//variable for audio
+var titleSound = new Audio('titleAudio.mp3');
+var errorAudio = new Audio('errorAudio.mp3');
+
 //function to check input and throw a message if input is invalid
 function checkInput(){
 
@@ -27,7 +40,9 @@ function checkInput(){
 function detectKeys(key){
 
     // valid keys are:
-    // Backspace, Enter, Delete - 8, 13, 46
+    // Backspace, Enter, Spacebar - 8, 13, 32
+    // Arrow Keys - [37-40]
+    // Delete - 46
     // numbers on top row - [48-57]
     // numbers on numpad - [96-105]
     // decimal point and period - 110 and 190
@@ -35,18 +50,29 @@ function detectKeys(key){
     if(key == 8 || key == 13 || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190){
 
         console.log("valid");
-        changeColor("#05c505");
-        removeError();
 
+        if(state == 1){
+            //remove error message
+            changeColor("#05c505");
+            removeError();
+        }
     }
     else{
 
         console.log("invalid");
-        changeColor("red");
         
-        //function to make error visible
-        showError();
+        if(state == 0){
+            //show error message
+            errorEnable();
+            changeColor("red");
+            showError();
+        }
+        if(state == 1){
+            
+            changeColor("red");
+            showError();
 
+        }
     }
 }
 
@@ -133,6 +159,7 @@ function showError(){
     document.getElementById("title2").style.display = "none";
     document.getElementById("defaultButtons").style.display = "none";
     document.getElementById("errorStateButtons").style.display = "block";
+    state = 1;
     
 }
 
@@ -144,5 +171,41 @@ function removeError(){
     document.getElementById("title2").style.display = "block";
     document.getElementById("defaultButtons").style.display = "block";
     document.getElementById("errorStateButtons").style.display = "none";
+
+}
+
+//typewriter effect for error
+function errorWriter() {
+  if (j < errorText.length) {
+    document.getElementById("errorMessage").innerHTML += errorText.charAt(j);
+    j++;
+    setTimeout(errorWriter, 47);
+}
+}
+
+//typewriter effect for title
+function titleWriter() {
+    if (i < defaultText.length) {
+        document.getElementById("title2").innerHTML += defaultText.charAt(i);
+        i++;
+        setTimeout(titleWriter, 165);
+    }
+}
+
+//function to start the initial typewriter
+function starter(){
+
+    i=0;
+    titleSound.play();
+    titleWriter();
+
+}
+
+//function to start first instance of error message
+function errorEnable(){
+
+    j=0;
+    errorAudio.play();
+    errorWriter();
 
 }
