@@ -32,11 +32,21 @@ function detectKeys(key){
     // numbers on numpad - [96-105]
     // decimal point and period - 110 and 190
 
-    if(key == 8 || key == 13 || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190)
-        console.log("valid");
-    else
-        console.log("invalid: " + key);
+    if(key == 8 || key == 13 || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190){
 
+        console.log("valid");
+        changeColor("#05c505")
+
+    }
+    else{
+
+        console.log("invalid");
+        changeColor("red");
+        
+        //function to make error visible
+        showError();
+
+    }
 }
 
 //function to accept button press inputs and run the calculate function
@@ -83,5 +93,37 @@ function calcTotal() {
     //updating tip value and total bill fields
     document.getElementById('tipValue').value = parseFloat((tipPercent*billInput)/100).toFixed(2);
     document.getElementById('billTotal').value = parseFloat(parseFloat(billInput) + ((tipPercent*parseFloat(billInput))/100)).toFixed(2);
+
+}
+
+//function to changeColor of the entire design
+function changeColor(newColor){
+
+    const body = document.body;
+    const inputs = document.querySelectorAll("input");
+    const buttons = document.querySelectorAll("button");
+
+    body.style.color = newColor;
+
+    inputs.forEach(element => {
+
+        element.style.color = newColor;
+        element.style.borderColor = newColor;
+
+    });
+
+    buttons.forEach(element => {
+
+        element.style.color = newColor;
+        element.style.borderColor = newColor;
+
+    });
+    
+}
+
+//function to show an error and then revert back to default
+function showError(){
+
+    
 
 }
