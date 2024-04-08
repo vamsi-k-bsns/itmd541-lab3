@@ -46,8 +46,9 @@ function detectKeys(key){
     // numbers on top row - [48-57]
     // numbers on numpad - [96-105]
     // decimal point and period - 110 and 190
+    //android keys?
 
-    if(key == 8 || key == 13 || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190){
+    if((key >= 8 && key <= 16) || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190){
 
         console.log("valid");
 
