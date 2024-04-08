@@ -49,11 +49,16 @@ input[type=number]{
   font-weight: bolder;
   justify-content: center;
   text-align: center;
-  border: solid rgb(1, 122, 1);
+  border: solid 5px rgb(1, 122, 1);
 
 }
 
+input[type=number]:focus{
 
+  outline: none;
+  border: solid 5px rgb(5, 197, 5);
+
+}
 
 :disabled{
 
