@@ -36,16 +36,17 @@ function checkInput(){
 }
 
 
-//function to check what key the user input
+//function to check what key.key the user input
 function detectKeys(key){
 
     // valid keys are:
-    // Backspace, Enter, Spacebar, Arrow Keys, Delete, numbers, and period/decimal point, Tab
+    // Backspace, Enter, Spacebar, Arrow key.keys, Delete, numbers, and period/decimal point, Tab
+    //keyCode 229 is a weird android keyboard notation for period/decimal point
 
-    if(key == 'Backspace' || key == 'Enter' || key == 'Spacebar' || key == 'ArrowUp' || key == 'ArrowDown' || key == 'ArrowLeft' || key == 'ArrowRight' || key == 'Delete' || (key >= 0 && key <= 9) || key == '.' || key == '.' || key == 'Tab'){
+    if( key.keyCode == 229 || key.key == 'Backspace' || key.key == 'Enter' || key.key == 'Spacebar' || key.key == 'ArrowUp' || key.key == 'ArrowDown' || key.key == 'ArrowLeft' || key.key == 'ArrowRight' || key.key == 'Delete' || (key.key >= 0 && key.key <= 9) || key.key == '.' || key.key == '.' || key.key == 'Tab'){
 
         console.log("valid");
-        console.log(key);
+        console.log(key.key + " - " + key.keyCode + " - " + key.code);
 
         if(state == 1){
             //remove error message
@@ -56,7 +57,7 @@ function detectKeys(key){
     else{
 
         console.log("invalid");
-        console.log(key);
+        console.log(key.key + " - " + key.keyCode + " - " + key.code);
 
         if(state == 0){
             //show error message

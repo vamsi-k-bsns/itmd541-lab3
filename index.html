@@ -11,7 +11,7 @@
 <body onload="starter()">
     <h1 id="errorMessage"></h1>
     <span class="labels">Bill:</span><br>
-    <input id="billInput" type="text" inputmode="numeric" placeholder="$0.00" min="0" oninput="checkInput()" onkeydown="detectKeys(event.key)" />
+    <input id="billInput" type="text" inputmode="numeric" placeholder="$0.00" min="0" oninput="checkInput()" onkeydown="detectKeys(event)" />
     <br><br>
     <span class="labels">Tip:</span><span id="percentMeter"></span>
     <input id="tipSlider" type="range" min="0" max="100" step="1" value="15" oninput="tipSlide()"/>
