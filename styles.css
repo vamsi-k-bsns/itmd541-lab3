@@ -146,6 +146,41 @@ button:focus{
 
 }
 
+#defaultButtons{
+
+  display: block;
+
+}
+
+#errorStateButtons{
+
+  display: none;
+
+}
+
+.errorStateButtons{
+
+  height: 10vh;
+  margin: 1%;
+  width: 30%;
+  border-radius: 10vw;
+  font-size: x-large;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+  background-color: black;
+  color: red;
+  border: solid;
+
+}
+
+.errorStateButtons:focus{
+
+  background-color: red;
+  color: black;
+
+}
+
+
 @media (min-width: 700px) {
 
   body{
@@ -159,5 +194,22 @@ button:focus{
     padding: 40px;
 
   }
+
+}
+
+
+
+#errorMessage{
+
+  display: none;
+  position: relative;
+  text-align: center;
+  border: solid 3px;
+
+}
+
+.title{
+
+  display: block;
 
 }

@@ -35,7 +35,8 @@ function detectKeys(key){
     if(key == 8 || key == 13 || key == 32 || (key >= 37 && key <= 40) || key == 46 || (key >= 48 && key <= 57) || (key >= 96 && key <= 105) || key == 110 || key == 190){
 
         console.log("valid");
-        changeColor("#05c505")
+        changeColor("#05c505");
+        removeError();
 
     }
     else{
@@ -65,12 +66,21 @@ function tipSlide(){
     document.getElementById('percentMeter').textContent = tipPercent + "%";
 
     //some conditions to focus/blur the tip percentage buttons
-    if(tipPercent==10)
+    if(tipPercent==10){
         document.getElementById('ten').focus();
-    if(tipPercent==15)
+        document.getElementById('ten2').focus();
+    }
+
+    if(tipPercent==15){
         document.getElementById('fifteen').focus();
-    if(tipPercent==20)
+        document.getElementById('fifteen2').focus();
+    }
+
+    if(tipPercent==20){
         document.getElementById('twenty').focus();
+        document.getElementById('twenty2').focus();
+    }
+
     if(tipPercent !== 10 && tipPercent !== 15 && tipPercent !== 20){
         //select every button in the file and run button.blur() on them all
         [...document.querySelectorAll('button')].forEach(button => button.blur());
@@ -102,6 +112,7 @@ function changeColor(newColor){
     const body = document.body;
     const inputs = document.querySelectorAll("input");
     const buttons = document.querySelectorAll("button");
+    const buttons2 = document.querySelectorAll("button:focus");
 
     body.style.color = newColor;
 
@@ -112,18 +123,26 @@ function changeColor(newColor){
 
     });
 
-    buttons.forEach(element => {
+}
 
-        element.style.color = newColor;
-        element.style.borderColor = newColor;
-
-    });
+//function to show an error
+function showError(){
+    
+    document.getElementById("errorMessage").style.display = "block";
+    document.getElementById("title1").style.display = "none";
+    document.getElementById("title2").style.display = "none";
+    document.getElementById("defaultButtons").style.display = "none";
+    document.getElementById("errorStateButtons").style.display = "block";
     
 }
 
-//function to show an error and then revert back to default
-function showError(){
-
+//function to remove error
+function removeError(){
     
+    document.getElementById("errorMessage").style.display = "none";
+    document.getElementById("title1").style.display = "block";
+    document.getElementById("title2").style.display = "block";
+    document.getElementById("defaultButtons").style.display = "block";
+    document.getElementById("errorStateButtons").style.display = "none";
 
 }

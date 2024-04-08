@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
 </head>
-<h4>ITMD 441/541 - Lab 3 - Vamsi Krishna</h4>
-<h1>Tip Calculator</h1>
+<h4 class="title" id="title1">ITMD 441/541 - Lab 3 - Vamsi Krishna</h4>
+<h1 class="title" id="title2">Tip Calculator</h1>
 <script src="scripts.js"></script>
 <body>
-    
+    <h1 id="errorMessage">enter numerical values only</h1>
     <span class="labels">Bill:</span><br>
     <input id="billInput" type="text" placeholder="$0.00" min="0" oninput="checkInput()" onkeydown="detectKeys(event.keyCode)" />
     <br><br>
     <span class="labels">Tip:</span><span id="percentMeter"></span>
     <input id="tipSlider" type="range" min="0" max="100" step="1" value="15" oninput="tipSlide()"/>
-    <div><button id="ten" onfocus="buttonPress(10)">10%</button><button id="fifteen" onfocus="buttonPress(15)">15%</button><button id="twenty" onfocus="buttonPress(20)" >20%</button></div>
+    <div id="defaultButtons"><button id="ten" onfocus="buttonPress(10)">10%</button><button id="fifteen" onfocus="buttonPress(15)">15%</button><button id="twenty" onfocus="buttonPress(20)" >20%</button></div>
+    <div id="errorStateButtons"><button class="errorStateButtons" id="ten2" onfocus="buttonPress(10)">10%</button><button class="errorStateButtons" id="fifteen2" onfocus="buttonPress(15)">15%</button><button class="errorStateButtons" id="twenty2" onfocus="buttonPress(20)" >20%</button></div>
     <br>
     <span class="labels">Tip Value:</span>
     <br>
